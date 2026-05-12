@@ -1,32 +1,19 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>KernelCorp - Gerência de Memória</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="container">
-        <header>
-            <span class="mission-tag">MISSÃO 04 · GERÊNCIA DE MEMÓRIA</span>
-            <h1>KernelCorp — Servidor de Banco de Dados</h1>
+<!-- Botão Flutuante -->
+<button id="btn-diagnostico" class="fab" onclick="abrirModal()">?</button>
+
+<!-- Janela do Documento (Modal) -->
+<div id="modal-diagnostico" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="fecharModal()">&times;</span>
+        <header class="modal-header">
+            <h2>RELATÓRIO TÉCNICO: DIAGNOSTICADOR</h2>
         </header>
-
-        <section class="document">
-            <h3>📄 SITUAÇÃO</h3>
-            <p>Um servidor de banco de dados da KernelCorp precisa executar 128 processos simultâneos. A RAM física disponível é de 8 GB. Cada processo solicita 500 MB de memória.</p>
-            <p><strong>(128 × 500 MB = 64 GB — muito além da memória física!)</strong></p>
-        </section>
-
-        <div class="controls">
-            <button onclick="simular(false)">Simular Memória Real</button>
-            <button onclick="simular(true)">Simular Memória Virtual</button>
-        </div>
-
-        <div id="output" class="terminal">
-            <p>> Aguardando comando...</p>
+        <div class="modal-body">
+            <h3>Pergunta: O que aconteceria se o SO usasse apenas memória real?</h3>
+            <p><strong>Resposta Técnica:</strong> O sistema atingiria o limite físico de 8 GB após carregar apenas os primeiros 16 processos. Sem a virtualização (memória lógica separada da física), os 112 processos restantes seriam sumariamente bloqueados por erro de <em>Out of Memory</em>.</p>
+            <hr>
+            <p><strong>Impacto:</strong> Colapso do banco de dados, fragmentação externa severa e impossibilidade de multitarefa massiva. A virtualização é a barreira que impede o crash sistêmico neste cenário da KernelCorp.</p>
+            <p><small>Referência: Silberschatz, Cap. 9</small></p>
         </div>
     </div>
-    <script src="script.js"></script>
-</body>
-</html>
+</div>
