@@ -2,29 +2,34 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KernelCorp - Gerência de Memória</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <span class="mission-tag">MISSÃO 04 · GERÊNCIA DE MEMÓRIA</span>
+    <div class="container fade-in">
+        <header class="main-header">
+            <div class="mission-tag">MISSÃO 04 · GERÊNCIA DE MEMÓRIA</div>
             <h1>KernelCorp — Servidor de Banco de Dados</h1>
         </header>
 
-        <section class="document">
-            <h3>📄 SITUAÇÃO</h3>
+        <section class="document-section">
+            <div class="section-title">
+                <span class="icon">📄</span> SITUAÇÃO
+            </div>
             <p>Um servidor de banco de dados da KernelCorp precisa executar 128 processos simultâneos. A RAM física disponível é de 8 GB. Cada processo solicita 500 MB de memória.</p>
-            <p><strong>(128 × 500 MB = 64 GB — muito além da memória física!)</strong></p>
+            <p class="highlight">(128 × 500 MB = 64 GB — muito além da memória física!)</p>
         </section>
 
-        <div class="controls">
-            <button onclick="simular(false)">Simular Memória Real</button>
-            <button onclick="simular(true)">Simular Memória Virtual</button>
+        <div class="button-group">
+            <button class="btn-neon blue" onclick="simular(false)">Simular Memória Real</button>
+            <button class="btn-neon cyan" onclick="simular(true)">Simular Memória Virtual</button>
+            <a href="https://docs.google.com/document/d/1OiJ8iGQXB4NvRWxEkppPQCRJoAF6mzNfZM0IVYLeCL0/edit?usp=sharing" target="_blank" class="btn-neon pink">Relatório Técnico</a>
         </div>
 
-        <div id="output" class="terminal">
-            <p>> Aguardando comando...</p>
+        <div id="output" class="terminal-window">
+            <div class="terminal-header">Terminal do SO</div>
+            <div id="output-content">> Aguardando comando...</div>
         </div>
     </div>
     <script src="script.js"></script>

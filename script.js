@@ -1,6 +1,6 @@
 function simular(comVirtualizacao) {
-    const output = document.getElementById('output');
-    output.innerHTML = ""; // Limpa o terminal
+    const output = document.getElementById('output-content');
+    output.innerHTML = "";
     
     let ramFisica = 8192; // 8GB em MB
     let ramUsada = 0;
