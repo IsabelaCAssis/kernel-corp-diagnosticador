@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>KernelCorp - Gerência de Memória</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="mission-tag">MISSÃO 04 · GERÊNCIA DE MEMÓRIA</span>
+            <h1>KernelCorp — Servidor de Banco de Dados</h1>
+        </header>
+
+        <section class="document">
+            <h3>📄 SITUAÇÃO</h3>
+            <p>Um servidor de banco de dados da KernelCorp precisa executar 128 processos simultâneos. A RAM física disponível é de 8 GB. Cada processo solicita 500 MB de memória.</p>
+            <p><strong>(128 × 500 MB = 64 GB — muito além da memória física!)</strong></p>
+        </section>
+
+        <div class="controls">
+            <button onclick="simular(false)">Simular Memória Real</button>
+            <button onclick="simular(true)">Simular Memória Virtual</button>
+        </div>
+
+        <div id="output" class="terminal">
+            <p>> Aguardando comando...</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
