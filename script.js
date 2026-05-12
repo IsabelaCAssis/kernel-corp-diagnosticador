@@ -1,15 +1,27 @@
-function abrirModal() {
-    document.getElementById("modal-diagnostico").style.display = "block";
-}
+function simular(comVirtualizacao) {
+    const output = document.getElementById('output');
+    output.innerHTML = ""; // Limpa o terminal
+    
+    let ramFisica = 8192; // 8GB em MB
+    let ramUsada = 0;
+    let processos = 128;
+    let tamanhoProcesso = 500;
 
-function fecharModal() {
-    document.getElementById("modal-diagnostico").style.display = "none";
-}
+    output.innerHTML += `<p>> Iniciando simulação de ${processos} processos...</p>`;
 
-// Fecha se clicar fora da janela
-window.onclick = function(event) {
-    let modal = document.getElementById("modal-diagnostico");
-    if (event.target == modal) {
-        modal.style.display = "none";
+    for (let i = 0; i < processos; i++) {
+        if (ramUsada + tamanhoProcesso <= ramFisica) {
+            ramUsada += tamanhoProcesso;
+            output.innerHTML += `<p style="color: #00ff00">[OK] P${i} alocado na RAM física.</p>`;
+        } else {
+            if (comVirtualizacao) {
+                output.innerHTML += `<p style="color: #00a8ff">[SWAP] P${i} movido para o disco (Virtualização ativa).</p>`;
+            } else {
+                output.innerHTML += `<p style="color: #ff0000">[CRITICAL] P${i} falhou: Memória Real esgotada!</p>`;
+                output.innerHTML += `<p><strong>O sistema travou com apenas ${i} processos.</strong></p>`;
+                return;
+            }
+        }
     }
+    output.innerHTML += `<p><strong>Sucesso: Todos os ${processos} processos estão sendo gerenciados!</strong></p>`;
 }

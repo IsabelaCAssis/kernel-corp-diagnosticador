@@ -1,44 +1,51 @@
-/* Botão Flutuante (FAB) */
-.fab {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background: #ff006e;
-    color: white;
-    font-size: 24px;
-    font-weight: bold;
-    border: none;
-    box-shadow: 0 0 15px #ff006e;
-    cursor: pointer;
-    transition: 0.3s;
-    z-index: 1000;
-}
-
-.fab:hover { transform: scale(1.1); box-shadow: 0 0 25px #ff006e; }
-
-/* Modal (Janela) */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1001;
-    left: 0; top: 0;
-    width: 100%; height: 100%;
-    background-color: rgba(0,0,0,0.8);
-}
-
-.modal-content {
+body {
     background-color: #0d1117;
-    margin: 10% auto;
+    color: white;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    justify-content: center;
     padding: 20px;
-    border: 2px solid #00a8ff;
-    width: 50%;
-    box-shadow: 0 0 30px #00a8ff;
-    color: #e6edf3;
 }
 
-.modal-header { border-bottom: 1px solid #00a8ff; margin-bottom: 15px; color: #00a8ff; }
-.close { color: #ff006e; float: right; font-size: 28px; font-weight: bold; cursor: pointer; }
-.modal-body h3 { color: #ff006e; }
+.container {
+    width: 800px;
+    border: 2px solid #ff006e;
+    padding: 20px;
+}
+
+header {
+    background-color: #ff006e;
+    padding: 5px 15px;
+    margin-bottom: 20px;
+}
+
+.mission-tag { font-size: 12px; font-weight: bold; }
+
+.document {
+    border: 1px solid #ff006e;
+    padding: 15px;
+    margin-bottom: 20px;
+    background: rgba(255, 0, 110, 0.05);
+}
+
+.terminal {
+    background: #000;
+    height: 300px;
+    overflow-y: auto;
+    padding: 10px;
+    font-family: monospace;
+    border: 1px solid #30363d;
+    color: #00ff00;
+}
+
+button {
+    background: transparent;
+    border: 1px solid #00a8ff;
+    color: #00a8ff;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+button:hover { background: #00a8ff; color: white; }
